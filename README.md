@@ -30,15 +30,15 @@ Giyim ve ayakkabı mağazalarında iadelerin büyük kısmı **beden** kaynaklı
 
 | Ürün sayfası | İade talebi (Hesabım) |
 |---|---|
-| ![Ürün sayfası](.github/screenshots/01-urun-sayfasi.png) | ![İade talebi](.github/screenshots/02-iade-talebi.png) |
+| ![Ürün sayfası](screenshots/01-urun-sayfasi.png) | ![İade talebi](screenshots/02-iade-talebi.png) |
 
 | Genel bakış | Ürün uyum analizi |
 |---|---|
-| ![Genel bakış](.github/screenshots/03-genel-bakis.png) | ![Ürün uyum analizi](.github/screenshots/04-urun-uyum-analizi.png) |
+| ![Genel bakış](screenshots/03-genel-bakis.png) | ![Ürün uyum analizi](screenshots/04-urun-uyum-analizi.png) |
 
 | Maliyet raporu | İade yönetimi |
 |---|---|
-| ![Maliyet raporu](.github/screenshots/05-maliyet-raporu.png) | ![İade yönetimi](.github/screenshots/06-iade-yonetimi.png) |
+| ![Maliyet raporu](screenshots/05-maliyet-raporu.png) | ![İade yönetimi](screenshots/06-iade-yonetimi.png) |
 
 ## Özellikler
 
@@ -121,3 +121,4 @@ Eklentiyi faydalı bulduysanız repoya ⭐ vermeniz ve [oblifex.com](https://obl
 **[Web Danışmanı](https://webdanismani.com)** tarafından geliştirildi · Topluluk: **[oblifex.com](https://oblifex.com)**
 
 </div>
+
