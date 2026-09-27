@@ -1,0 +1,100 @@
+/* WD Uyum Asistanı – yönetim paneli */
+.wdua-wrap { max-width: 1400px; }
+.wdua-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.wdua-top .page-title-action { position: static; }
+.wdua-brand { margin-left: auto; font-size: 12px; color: #8c8f94; letter-spacing: .04em; text-transform: uppercase; }
+.wdua-lead { max-width: 900px; margin: 8px 0 14px; }
+.wdua-dim { color: #8c8f94; font-size: 12px; }
+.wdua-empty { color: #646970; padding: 16px; background: #fff; border: 1px dashed #dcdcde; border-radius: 8px; }
+.wdua-error { color: #b32d2e; }
+
+.wdua-periods { display: inline-flex; background: #fff; border: 1px solid #dcdcde; border-radius: 8px; overflow: hidden; margin: 10px 0 18px; }
+.wdua-periods a { padding: 7px 14px; text-decoration: none; color: #1d2327; border-right: 1px solid #dcdcde; font-size: 13px; }
+.wdua-periods a:last-child { border-right: 0; }
+.wdua-periods a.is-active { background: #1d2327; color: #fff; }
+
+.wdua-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.wdua-card { background: #fff; border: 1px solid #e0e0e3; border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
+.wdua-card--accent { background: #1d2327; border-color: #1d2327; color: #fff; }
+.wdua-card--accent .wdua-card__label, .wdua-card--accent .wdua-card__sub { color: #c3c4c7; }
+.wdua-card--accent .woocommerce-Price-amount { color: #fff; }
+.wdua-card__label { font-size: 12px; color: #646970; text-transform: uppercase; letter-spacing: .04em; }
+.wdua-card__value { font-size: 26px; line-height: 1.2; font-weight: 600; }
+.wdua-card__sub { font-size: 12px; color: #8c8f94; }
+
+.wdua-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 1100px) { .wdua-grid { grid-template-columns: 1fr; } }
+.wdua-panel { background: #fff; border: 1px solid #e0e0e3; border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; }
+.wdua-panel h2 { font-size: 15px; margin: 0 0 12px; display: flex; align-items: center; gap: 8px; }
+.wdua-more { margin-left: auto; font-size: 12px; font-weight: 400; text-decoration: none; }
+.wdua-narrow { max-width: 760px; }
+
+.wdua-stack { display: flex; height: 16px; border-radius: 999px; overflow: hidden; background: #f0f0f1; margin: 6px 0 14px; }
+.wdua-stack span { height: 100%; }
+.wdua-legend { margin: 0; display: grid; gap: 6px; }
+.wdua-legend li { display: flex; align-items: center; gap: 8px; margin: 0; }
+.wdua-legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.wdua-legend strong { margin-left: auto; }
+
+.wdua-bars { display: grid; gap: 8px; }
+.wdua-bar { display: grid; grid-template-columns: 200px 1fr 150px; align-items: center; gap: 10px; font-size: 13px; }
+.wdua-bar__track { height: 10px; background: #f0f0f1; border-radius: 999px; overflow: hidden; }
+.wdua-bar__track span { display: block; height: 100%; background: #8c8f94; border-radius: 999px; }
+.wdua-bar--fit .wdua-bar__track span { background: #f76707; }
+.wdua-bar--color .wdua-bar__track span { background: #ae3ec9; }
+.wdua-bar--quality .wdua-bar__track span { background: #fab005; }
+.wdua-bar--defect .wdua-bar__track span { background: #e03131; }
+.wdua-bar--wrong .wdua-bar__track span { background: #1c7ed6; }
+.wdua-bar__val { text-align: right; color: #646970; }
+@media (max-width: 782px) { .wdua-bar { grid-template-columns: 1fr; } .wdua-bar__val { text-align: left; } }
+
+.wdua-table td, .wdua-table th { vertical-align: middle; }
+.wdua-table .num { text-align: right; white-space: nowrap; }
+.wdua-total-cell { position: relative; }
+.wdua-inbar { position: absolute; right: 8px; bottom: 4px; height: 3px; background: #e03131; border-radius: 2px; opacity: .55; }
+
+.wdua-status { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12px; background: #f0f0f1; white-space: nowrap; }
+.wdua-status--requested { background: #fff3bf; color: #7a5b00; }
+.wdua-status--approved { background: #d0ebff; color: #0b5394; }
+.wdua-status--received { background: #e5dbff; color: #5f3dc4; }
+.wdua-status--refunded, .wdua-status--exchanged { background: #d3f9d8; color: #2b8a3e; }
+.wdua-status--rejected { background: #ffe3e3; color: #c92a2a; }
+
+.wdua-search { float: right; display: flex; gap: 6px; margin: 6px 0 10px; }
+.wdua-search input[type=search] { min-width: 240px; }
+
+.wdua-edit { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 16px; align-items: start; }
+@media (max-width: 1100px) { .wdua-edit { grid-template-columns: 1fr; } }
+.wdua-form th { width: 180px; padding: 12px 10px 12px 0; }
+.wdua-form td { padding: 10px 10px; }
+.wdua-inline { display: inline-block; margin-left: 10px; }
+.wdua-costs .wdua-total th, .wdua-costs .wdua-total td { border-top: 1px solid #e0e0e3; font-size: 15px; }
+.wdua-dl { display: grid; grid-template-columns: 100px 1fr; gap: 6px 10px; margin: 0; }
+.wdua-dl dt { color: #646970; }
+.wdua-dl dd { margin: 0; }
+.wdua-quote { margin: 8px 0 0; padding: 10px 12px; background: #f6f7f7; border-left: 3px solid #8c8f94; border-radius: 4px; }
+.wdua-danger { background: transparent; border: 0; padding: 0 4px; }
+.wdua-delete { color: #b32d2e !important; }
+
+.wdua-mini-scale { position: relative; display: inline-block; width: 90px; height: 6px; border-radius: 999px; background: linear-gradient(90deg, #ffd8c2, #e9ecef 40%, #e9ecef 60%, #cfe3fb); vertical-align: middle; }
+.wdua-mini-scale i { position: absolute; top: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px; background: #1d2327; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px #1d2327; }
+.wdua-verdict { font-weight: 600; }
+.wdua-verdict--small { color: #d9480f; }
+.wdua-verdict--large { color: #1c7ed6; }
+.wdua-verdict--true { color: #2b8a3e; }
+.wdua-sizes { display: flex; flex-wrap: wrap; gap: 4px; }
+.wdua-size { display: inline-block; min-width: 22px; text-align: center; padding: 1px 7px; border-radius: 4px; font-size: 12px; background: #f0f0f1; color: #50575e; }
+.wdua-size--small { background: #ffe8d9; color: #d9480f; }
+.wdua-size--large { background: #dbeafe; color: #1c64c7; }
+.wdua-size--true { background: #d3f9d8; color: #2b8a3e; }
+.wdua-recs ul { margin: 0; padding-left: 16px; list-style: disc; }
+.wdua-recs li { margin: 0 0 4px; font-size: 12px; }
+
+.wdua-settings .form-table th { width: 280px; }
+.wdua-checks label { display: inline-block; margin: 0 16px 6px 0; }
+
+/* Sipariş / ürün kutuları */
+.wdua-box-list { margin: 0; }
+.wdua-box-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f1; margin: 0; }
+
+.wdua-cur { color: #50575e; margin: 0 2px; }

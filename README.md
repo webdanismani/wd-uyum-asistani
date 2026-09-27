@@ -13,8 +13,8 @@
 [![Lisans](https://img.shields.io/badge/lisans-GPLv2-blue)](LICENSE)
 [![Ücretsiz](https://img.shields.io/badge/fiyat-ücretsiz-brightgreen)](#)
 
-### 💬 Destek, soru ve öneriler: **[oblifex.com](https://oblifex.com)**
-Türkiye'nin webmaster forumu: WordPress, WooCommerce, sunucu, SEO ve e-ticaret üzerine konuşuyoruz.
+### 💬 Destek ve daha fazla ücretsiz yazılım: **[oblifex.com](https://oblifex.com)**
+Sorularınızı sorabileceğiniz, bu ve benzeri WordPress / WooCommerce yazılımlarını bulabileceğiniz sitemiz.
 
 </div>
 
@@ -72,7 +72,7 @@ Maliyet her iade için şöyle hesaplanır: **gidiş kargosu (adede oranlanır) 
 
 ## Kurulum
 
-1. [Releases](../../releases) sayfasından `wd-uyum-asistani.zip` dosyasını indirin.
+1. Bu sayfadaki yeşil **Code → Download ZIP** düğmesiyle eklentiyi indirin (ya da [oblifex.com](https://oblifex.com)'daki paketi kullanın). Zip'i açmayın.
 2. WordPress panelinde **Eklentiler > Yeni Ekle > Eklenti Yükle** ile zip'i yükleyip etkinleştirin.
 3. **Uyum Asistanı > Ayarlar** ekranında şunları kontrol edin:
    - **Beden nitelikleri:** Mağazanızdaki beden niteliğinin adı (varsayılan: `pa_beden, beden, pa_numara, pa_size`).
@@ -104,7 +104,8 @@ Veriler `{prefix}wdua_returns` ve `{prefix}wdua_feedback` tablolarında tutulur.
 
 ## Destek ve katkı
 
-- 💬 **Soru, hata bildirimi ve öneriler:** [oblifex.com](https://oblifex.com). Forumda konu açın, hem biz hem diğer webmasterlar yardımcı olur.
+- 💬 **Destek, soru ve öneriler:** [oblifex.com](https://oblifex.com). Konu açın, yardımcı olalım. Diğer ücretsiz eklentilerimizi de orada bulabilirsiniz.
+- 🏢 **Geliştirici:** [Web Danışmanı](https://webdanismani.com), webdanismani.com
 - 🐛 Hata bildirimi için GitHub [Issues](../../issues) da kullanılabilir.
 - 🔧 Pull request'lere açığız.
 
@@ -118,7 +119,6 @@ Eklentiyi faydalı bulduysanız repoya ⭐ vermeniz ve [oblifex.com](https://obl
 
 <div align="center">
 
-**[Web Danışmanı](https://webdanismani.com)** tarafından geliştirildi · Topluluk: **[oblifex.com](https://oblifex.com)**
+**[Web Danışmanı](https://webdanismani.com)** tarafından geliştirildi · Destek ve daha fazla yazılım: **[oblifex.com](https://oblifex.com)**
 
 </div>
-

@@ -1,0 +1,130 @@
+/* WD Uyum Asistanı – mağaza tarafı */
+.wdua-fit {
+	--wdua-ink: #1d1d1f;
+	--wdua-muted: #6b6b70;
+	--wdua-line: #e6e6ea;
+	--wdua-bg: #fafafb;
+	--wdua-accent: #111;
+	--wdua-small: #d9480f;
+	--wdua-large: #1c7ed6;
+	--wdua-true: #2b8a3e;
+	margin: 14px 0 18px;
+	padding: 14px 16px;
+	border: 1px solid var(--wdua-line);
+	border-radius: 12px;
+	background: var(--wdua-bg);
+	color: var(--wdua-ink);
+	font-size: 14px;
+	line-height: 1.45;
+	max-width: 520px;
+	transition: opacity .2s ease;
+}
+.wdua-fit.wdua-is-hidden { display: none; }
+.wdua-fit__head { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.wdua-fit__icon { color: var(--wdua-muted); flex: 0 0 auto; }
+.wdua-fit__title { font-weight: 600; letter-spacing: .01em; }
+.wdua-fit__size {
+	margin-left: auto;
+	font-size: 12px;
+	padding: 2px 8px;
+	border-radius: 999px;
+	background: #fff;
+	border: 1px solid var(--wdua-line);
+	color: var(--wdua-muted);
+}
+.wdua-fit__scale { display: flex; align-items: center; gap: 10px; margin: 4px 0 10px; font-size: 12px; color: var(--wdua-muted); }
+.wdua-fit__track {
+	position: relative;
+	flex: 1;
+	height: 6px;
+	border-radius: 999px;
+	background: linear-gradient(90deg, #ffd8c2 0%, #e9ecef 38%, #e9ecef 62%, #cfe3fb 100%);
+}
+.wdua-fit__mid { position: absolute; left: 50%; top: -4px; width: 2px; height: 14px; margin-left: -1px; background: #adb5bd; border-radius: 2px; }
+.wdua-fit__dot {
+	position: absolute;
+	top: 50%;
+	width: 16px;
+	height: 16px;
+	margin: -8px 0 0 -8px;
+	border-radius: 50%;
+	background: var(--wdua-accent);
+	border: 3px solid #fff;
+	box-shadow: 0 1px 4px rgba(0,0,0,.25);
+	transition: left .35s cubic-bezier(.2,.8,.2,1);
+}
+.wdua-fit__msg { margin: 0; font-weight: 600; }
+.wdua-fit--small .wdua-fit__msg { color: var(--wdua-small); }
+.wdua-fit--large .wdua-fit__msg { color: var(--wdua-large); }
+.wdua-fit--true .wdua-fit__msg { color: var(--wdua-true); }
+.wdua-fit__color { margin: 6px 0 0; color: var(--wdua-muted); }
+.wdua-fit__src { margin: 6px 0 0; font-size: 12px; color: var(--wdua-muted); }
+.wdua-fit [hidden] { display: none !important; }
+
+/* Hesabım – iade & geri bildirim */
+.wdua-account { margin-top: 32px; }
+.wdua-h { margin: 28px 0 8px; }
+.wdua-muted { color: #6b6b70; font-size: .92em; }
+.wdua-table small { color: #6b6b70; }
+.wdua-status { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; background: #f1f3f5; white-space: nowrap; }
+.wdua-status--requested { background: #fff3bf; }
+.wdua-status--approved { background: #d0ebff; }
+.wdua-status--received { background: #e5dbff; }
+.wdua-status--refunded, .wdua-status--exchanged { background: #d3f9d8; }
+.wdua-status--rejected { background: #ffe3e3; }
+
+.wdua-items { display: grid; gap: 10px; margin: 12px 0 16px; }
+.wdua-item { border: 1px solid #e6e6ea; border-radius: 10px; padding: 12px 14px; background: #fff; }
+.wdua-item.is-on { border-color: #111; box-shadow: 0 0 0 1px #111 inset; }
+.wdua-item__pick { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; margin: 0; }
+.wdua-item__pick input { margin-top: 4px; }
+.wdua-item__name small { display: block; color: #6b6b70; }
+.wdua-item__fields { display: grid; grid-template-columns: 110px 1fr; gap: 10px 14px; margin-top: 12px; }
+.wdua-item__fields[hidden] { display: none; }
+.wdua-field { display: flex; flex-direction: column; gap: 4px; font-size: 13px; margin: 0; }
+.wdua-field select, .wdua-field textarea { width: 100%; }
+.wdua-fitpick { grid-column: 1 / -1; border: 0; padding: 0; margin: 0; }
+.wdua-fitpick[hidden] { display: none; }
+.wdua-fitpick legend { font-size: 13px; margin-bottom: 6px; padding: 0; }
+
+.wdua-seg { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+.wdua-seg__opt { position: relative; margin: 0; cursor: pointer; }
+.wdua-seg__opt input { position: absolute; opacity: 0; pointer-events: none; }
+.wdua-seg__opt span {
+	display: inline-block;
+	padding: 7px 12px;
+	border: 1px solid #d0d0d6;
+	border-radius: 999px;
+	font-size: 13px;
+	background: #fff;
+	transition: all .15s ease;
+	user-select: none;
+}
+.wdua-seg__opt:hover span { border-color: #111; }
+.wdua-seg__opt input:checked + span { background: #111; border-color: #111; color: #fff; }
+.wdua-seg__opt input:focus-visible + span { outline: 2px solid #1c7ed6; outline-offset: 2px; }
+
+.wdua-fb-form { margin: 12px 0; }
+.wdua-fb-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 0; border-bottom: 1px solid #eee; }
+.wdua-fb-row__name small { display: block; color: #6b6b70; }
+.wdua-btn { margin-top: 12px; }
+.wdua-account .wdua-btn {
+	display: inline-block;
+	padding: 11px 22px;
+	border: 0;
+	border-radius: 8px;
+	background: #111;
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+	line-height: 1.2;
+}
+.wdua-account .wdua-btn:hover { background: #333; color: #fff; }
+.wdua-account textarea { width: 100%; padding: 10px 12px; border: 1px solid #d0d0d6; border-radius: 8px; font: inherit; }
+.wdua-account select { padding: 7px 10px; border: 1px solid #d0d0d6; border-radius: 8px; background: #fff; font: inherit; }
+
+@media (max-width: 600px) {
+	.wdua-item__fields { grid-template-columns: 1fr; }
+	.wdua-fb-row { flex-direction: column; align-items: flex-start; }
+	.wdua-seg__opt span { padding: 7px 10px; }
+}

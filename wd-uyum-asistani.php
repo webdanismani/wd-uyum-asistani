@@ -23,14 +23,52 @@ define( 'WDUA_URL', plugin_dir_url( __FILE__ ) );
 define( 'WDUA_SUPPORT_URL', 'https://oblifex.com' );
 define( 'WDUA_REPO_URL', 'https://github.com/webdanismani/wd-uyum-asistani' );
 
-require_once WDUA_DIR . 'includes/class-wdua-settings.php';
-require_once WDUA_DIR . 'includes/class-wdua-reasons.php';
-require_once WDUA_DIR . 'includes/class-wdua-install.php';
-require_once WDUA_DIR . 'includes/class-wdua-repo.php';
-require_once WDUA_DIR . 'includes/class-wdua-stats.php';
-require_once WDUA_DIR . 'includes/class-wdua-service.php';
-require_once WDUA_DIR . 'includes/class-wdua-frontend.php';
-require_once WDUA_DIR . 'includes/class-wdua-admin.php';
+// Eksik yükleme koruması: dosyalar eksikse (ör. GitHub web yüklemesinde klasörler atlanmışsa)
+// site çökmez; eklenti çalışmaz ve yöneticiye yeniden kurulum uyarısı gösterilir.
+$wdua_required = array(
+	'includes/class-wdua-settings.php',
+	'includes/class-wdua-reasons.php',
+	'includes/class-wdua-install.php',
+	'includes/class-wdua-repo.php',
+	'includes/class-wdua-stats.php',
+	'includes/class-wdua-service.php',
+	'includes/class-wdua-frontend.php',
+	'includes/class-wdua-admin.php',
+	'assets/css/admin.css',
+	'assets/css/frontend.css',
+	'assets/js/admin.js',
+	'assets/js/frontend.js',
+);
+$wdua_missing  = array();
+foreach ( $wdua_required as $wdua_file ) {
+	if ( ! is_readable( WDUA_DIR . $wdua_file ) ) {
+		$wdua_missing[] = $wdua_file;
+	}
+}
+if ( $wdua_missing ) {
+	add_action(
+		'admin_notices',
+		function () use ( $wdua_missing ) {
+			if ( ! current_user_can( 'activate_plugins' ) ) {
+				return;
+			}
+			$list = implode( ', ', array_slice( $wdua_missing, 0, 5 ) ) . ( count( $wdua_missing ) > 5 ? ' …' : '' );
+			printf(
+				'<div class="notice notice-error"><p><strong>WD Uyum Asistanı eksik yüklenmiş, bu yüzden çalıştırılmadı.</strong> Bulunamayan dosyalar: <code>%s</code></p><p>Eklentiyi silip <a href="%s" target="_blank" rel="noopener">GitHub sayfasından</a> (Code → Download ZIP) ya da <a href="%s" target="_blank" rel="noopener">oblifex.com</a> üzerindeki paketle yeniden kurun.</p></div>',
+				esc_html( $list ),
+				esc_url( WDUA_REPO_URL ),
+				esc_url( WDUA_SUPPORT_URL )
+			);
+		}
+	);
+	return;
+}
+foreach ( $wdua_required as $wdua_file ) {
+	if ( '.php' === substr( $wdua_file, -4 ) ) {
+		require_once WDUA_DIR . $wdua_file;
+	}
+}
+unset( $wdua_required, $wdua_missing, $wdua_file );
 
 register_activation_hook( __FILE__, array( 'WDUA_Install', 'activate' ) );
 register_deactivation_hook( __FILE__, array( 'WDUA_Install', 'deactivate' ) );
